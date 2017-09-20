@@ -1,0 +1,43 @@
+create database my_ivr;
+
+CREATE TABLE `actions_table` (
+  `action_id` int(11) NOT NULL,
+  `web_action_name` varchar(256) NOT NULL,
+  `function_handler_name` varchar(256) NOT NULL,
+  `allowed_for_this_menu` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`action_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+
+
+CREATE TABLE `billing_info` (
+  `subscriber` varchar(32) NOT NULL,
+  `balance` int(11) NOT NULL DEFAULT '0',
+  `current_tariff` varchar(32) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`subscriber`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+
+
+CREATE TABLE `ivr_actions` (
+  `varchar_ivr_id` varchar(128) NOT NULL,
+  `priority` int(11) NOT NULL,
+  `action_id` int(11) NOT NULL,
+  `action_args` varchar(256) NOT NULL DEFAULT '',
+  `if_failed_ivr_id` varchar(128) NOT NULL DEFAULT '',
+  PRIMARY KEY (`varchar_ivr_id`,`priority`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+
+
+CREATE TABLE `ivr_map` (
+  `varchar_ivr_id` varchar(128) NOT NULL,
+  `extension` varchar(32) NOT NULL,
+  `next_ivr_id` varchar(128) NOT NULL,
+  PRIMARY KEY (`varchar_ivr_id`,`extension`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+
+
+CREATE TABLE `ivr_names` (
+  `int_ivr_id` int(11) NOT NULL,
+  `ivr_name` varchar(256) NOT NULL DEFAULT '',
+  PRIMARY KEY (`int_ivr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
