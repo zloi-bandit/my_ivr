@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.0.0.js"></script>
+<script src="my_ivr_functions1.js"></script>
+
+<style>
+ table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse; 
+        width: 100%;
+ }
+
+ td, th {
+        border: 1px solid #dddddd;
+        text-align:left;
+        padding: 8px;
+ }
+
+ tr:nth-child(even) {
+        background-color: #dddddd;
+ }
+
+</style> 
+
+
+</head>
+<body onload="loadSelectWithActions()">
+
+<h1>Действия для данного меню</h1>
+
+<select name="action_select" id="action_select" on></select>
+
+<button onclick="loadActionsTableRow()">Добавить действие</button>
+
+
+<h1>Меню IVR</h1>
+
+<form action="3.php" method="get" id="mainform">
+<table style="width:100%" class="tablerow" id="tablerow1"><tr> <th>Триггер</th>  <th>Значение</th>  <th>Действие</th> </tr> </table>
+
+<button type="button" onclick="addNewElement()">Добавить</button>
+<button type="submit" form="mainform">Отправить форму</button></form>
+
+</body>
+</html>
+
