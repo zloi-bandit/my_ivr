@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<script src="jquery-3.0.0.js"></script>
-<script src="my_ivr_functions1.js"></script>
+<script src="../jquery-3.0.0.js"></script>
+<script src="../my_ivr_functions1.js"></script>
 
 <style>
  table {
@@ -31,7 +31,7 @@
 <h1 id="header1">Actions For This Menu</h1>
 
 
-<form action="4.php" method="get" id="mainform">
+<form action="../4.php" method="get" id="mainform">
 <p>Название IVR: </p><input type="text" id="this_ivr_name" name="this_ivr_name">
 <br><br><br>
 
@@ -42,7 +42,7 @@
 
 <table style="width:100%" class="tablerow" id="tablerow1"><tr> <th>Trigger</th>  <th>Value</th>  <th>Action</th> </tr> </table>
 
-<button type="button" onclick="addNewElement()">Add</button>
+<button type="button" onclick="addNewElement('en')">Add</button>
 
 <p style="visibility: hidden"><input type="hidden" id="actions_counter" name="actions_rows" value=0><input type="hidden" id="menu_rows_counter" name="menu_rows" value=0></p>
 <button type="submit" form="mainform">Send form</button></form>

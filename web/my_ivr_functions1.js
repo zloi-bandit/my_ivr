@@ -1,6 +1,6 @@
-function addNewElement() {
+function addNewElement(doc_language) {
 
-doc_language = "en";
+//doc_language = "en";
 
 	if (doc_language == "kz"){
 
@@ -392,9 +392,9 @@ doc_language = "en";
 }
 
 
-function loadActionsTableRow (language) {
+function loadActionsTableRow (doc_language) {
 
-	doc_language = "en";
+//	doc_language = "en";
 
         if (doc_language == "kz"){
 
@@ -472,7 +472,7 @@ function loadActionsTableRow (language) {
 	var button_parent = button_ref.parentNode; 
 	button_parent.insertBefore(this_table, button_ref);	
 	
-	var data = "requested_info=actions_this&language=" + language;
+	var data = "requested_info=actions_this&language=" + doc_language;
 	
 //	var output_begin = "<table style=\"width:40%\" id=\"action_select_table" + row_number_next + "\"><tr><td><select class=\"action_select\" id=\"action_select" + row_number_next + "\" name=\"action_select" + row_number_next + "\">";
 
