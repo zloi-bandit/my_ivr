@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="jquery-3.0.0.js"></script>
+<script src="my_ivr_functions1.js"></script>
+
+<style>
+ table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse; 
+        width: 100%;
+ }
+
+ td, th {
+        border: 1px solid #dddddd;
+        text-align:left;
+        padding: 8px;
+ }
+
+ tr:nth-child(even) {
+        background-color: #dddddd;
+ }
+
+</style> 
+
+
+</head>
+<body>
+
+<h1 id="header1">Actions For This Menu</h1>
+
+
+<form action="4.php" method="get" id="mainform">
+<p>Название IVR: </p><input type="text" id="this_ivr_name" name="this_ivr_name">
+<br><br><br>
+
+<button type="button" id="select_action_button" onclick="loadActionsTableRow('en')">Add action</button>
+
+
+<h1>IVR Menu</h1>
+
+<table style="width:100%" class="tablerow" id="tablerow1"><tr> <th>Trigger</th>  <th>Value</th>  <th>Action</th> </tr> </table>
+
+<button type="button" onclick="addNewElement()">Add</button>
+
+<p style="visibility: hidden"><input type="hidden" id="actions_counter" name="actions_rows" value=0><input type="hidden" id="menu_rows_counter" name="menu_rows" value=0></p>
+<button type="submit" form="mainform">Send form</button></form>
+
+
+
+</body>
+</html>
+
+
