@@ -13,12 +13,26 @@ function call_back (arg1, ari, channel, event, db_connection, logger) {
 		switch(this_digit){
 		case '#':
 	console.log(number);
-        ari.channels.continueInDialplan({channelId: channel.id});
+	var cnum = channel.caller.number;
+	ari.channels.hangup({channelId: channel.id});
 
-	 	setTimeout(function (){
-                ari.channels.continueInDialplan({channelId: channel.id});
-                }
-        	}, 10000);
+	var outgoing = ari.Channel();
+
+	outgoing.originate({endpoint: 'SIP/111', callerId: cnum, app: 'invoke_js_function', appArgs: '7,10'}, function (err, outgoing) {});
+
+
+		 
+
+
+
+
+   //     ari.channels.continueInDialplan({channelId: channel.id});
+
+		
+
+//	 	setTimeout(function (){
+  //              ari.channels.continueInDialplan({channelId: outgoing.id});
+    //    	}, 10000);
 
         	break;	
 

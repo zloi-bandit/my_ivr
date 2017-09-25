@@ -6,8 +6,11 @@ function change_tariff (arg1, ari, channel, event, db_connection, logger) {
 channel.on('ChannelDtmfReceived', dtmfReceived);
 	var channel_hung_up = 0;
 
+console.log("AAAAA!");
+
 	function dtmfReceived (event, channel) {
 
+console.log("BBBBB");
 	var digit = event.digit;
 	console.log(digit);	
 	var query = "UPDATE billing_info SET current_tariff=" + digit + " WHERE subscriber=?";
@@ -33,7 +36,7 @@ channel.on('ChannelDtmfReceived', dtmfReceived);
 		if ( channel_hung_up === 0){
 		ari.channels.continueInDialplan({channelId: channel.id});
 		} 
-	}, 10000);
+	}, 20000);
 }
 
 
